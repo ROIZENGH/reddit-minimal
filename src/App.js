@@ -1,6 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import { SearchTerm } from './features/searchTerm/SearchTerm.js';
+import { Posts } from "./features/posts/Posts.js";
+import { Subjects } from './features/subjects/Subjects';
 
 function App() {
   return (
@@ -12,6 +13,10 @@ function App() {
         </div>
         <SearchTerm />
       </nav>
+      <main>
+        <Posts className="posts-container"/>
+        <Subjects className="subjects-container"/>
+      </main>
     </div>
   );
 }

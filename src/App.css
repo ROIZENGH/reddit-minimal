@@ -59,4 +59,17 @@ nav {
 
 
 
+/* Main */
+
+main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.posts-container {
+  grid-column: 1 / span 1;
+}
+
+.subjects-container {
+  grid-column: 2 / span 1;
 }

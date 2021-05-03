@@ -6,8 +6,12 @@ export const Posts = () => {
     return (
         <div>
             <h2>POSTS</h2>
-            <p>First Post</p>
-            <p>Second Post</p>
+            {Object.values(posts).map((post)=>(
+                <div className="post-container">
+                    <h3>{post.username}</h3>
+                    <p>{post.description}</p>
+                </div>
+            ))}
         </div>
     )
 }

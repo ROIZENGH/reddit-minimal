@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
-import selectPosts from "./postsSlice.js";
+import { selectPosts } from "./postsSlice.js";
 
 export const Posts = () => {
-    //const posts = useSelector(selectPosts);
+    const posts = useSelector(selectPosts);
     return (
         <div>
             <h2>POSTS</h2>

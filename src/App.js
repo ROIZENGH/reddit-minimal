@@ -1,7 +1,7 @@
 import './App.css';
 import { SearchTerm } from './features/searchTerm/SearchTerm.js';
 import { Posts } from "./features/posts/Posts.js";
-import { Subjects } from './features/subjects/Subjects';
+import Subreddits from './features/subreddits/Subreddits';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       </nav>
       <main>
         <Posts className="posts-container"/>
-        <Subjects className="subjects-container"/>
+        <Subreddits className="subjects-container"/>
       </main>
     </div>
   );

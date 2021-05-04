@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { filterPosts } from "../posts/postsSlice.js";
 import { setTerm, selectSearchTerm } from "./searchTermSlice.js"
 
 
@@ -9,6 +11,10 @@ export const SearchTerm = () => {
     const onTermChangeHandler = (event)=>{
         dispatch(setTerm(event.target.value));
     }
+
+    useEffect(() => {
+        dispatch(filterPosts(term))
+    }, [term])
 
     return (
         <div className="searchbar-container">

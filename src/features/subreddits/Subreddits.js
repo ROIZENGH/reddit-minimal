@@ -5,6 +5,7 @@ import {
     selectSubreddits,
     isLoading,
 } from "./subredditsSlice";
+import { loadPosts } from "../posts/postsSlice.js"
 
 const Subreddits = () =>{
     const dispatch = useDispatch();
@@ -30,10 +31,10 @@ const Subreddits = () =>{
         <div>
             <h2>Popular Subreddits</h2>
             {Object.values(subreddits).map((subreddit)=>(
-                <div className="subreddit-container">
+                <button key={subreddit.data.id} className="subreddit-container" onClick={(e) => dispatch(loadPosts(subreddit.data.display_name_prefixed))}>
                     <img className="subreddit-icon" src={subreddit.data.icon_img || defaultIcon} alt=""/>
                     <p className="subreddit-name">{subreddit.data.display_name_prefixed}</p>
-                </div>
+                </button>
             ))}
         </div>
     )

@@ -14,7 +14,7 @@ export const SearchTerm = () => {
 
     useEffect(() => {
         dispatch(filterPosts(term))
-    }, [term])
+    }, [dispatch, term])
 
     return (
         <div className="searchbar-container">

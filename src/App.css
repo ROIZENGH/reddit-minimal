@@ -122,6 +122,20 @@ main {
   border: groove aliceblue;
   margin: 10px 0px; 
   border-radius: 10px;
+  padding: 10px;
+}
+
+.post-image {
+  width: 60%;
+  height: auto;
+  margin: 10px 0;
+}
+
+.comments-icon {
+  height: 30px;
+  width: auto;
+  display: inline-block;
+  
 }
 
 /* Subreddits */
@@ -131,6 +145,7 @@ main {
   border: groove aliceblue;
   margin: 10px 0px; 
   border-radius: 10px;
+  width: 100%;
 }
 
 .subreddit-icon {

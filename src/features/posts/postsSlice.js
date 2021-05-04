@@ -10,11 +10,10 @@ export const loadPosts = createAsyncThunk(
 )
 
 const initialState = {
-    posts: {
-        1: {username: "username 1", imageurl: "imageurl1", description:"post description 1", postId:"1"},
-        2: {username: "username 2", imageurl: "imageurl2", description:"post description 2", postId:"2"},
-        3: {username: "username 3", imageurl: "", description:"post description 3", postId:"3"}
-    },
+    posts: [
+        
+    ],
+    filteredPosts: [],
     isLoadingPosts: false,
     hasError: false
 }
@@ -23,8 +22,11 @@ const postsSlice = createSlice({
     name: "posts",
     initialState: initialState,
     reducers: {
-        addPost: (state, action) =>{
-            state.posts[action.payload.postid]=action.payload;
+        filterPosts: (state, action) =>{
+            if(action.payload.length === 0){
+                state.filteredPosts = state.posts;    
+            }
+            state.filteredPosts = state.posts.filter((post)=> post.data.title.toLowerCase().includes(action.payload.toLowerCase()));
         }
     },
     extraReducers: (builder) => {
@@ -36,7 +38,8 @@ const postsSlice = createSlice({
         .addCase(loadPosts.fulfilled, (state, action) => {
             state.isLoadingPosts = false;
             state.hasError = false;
-            state.posts = action.payload;
+            state.posts = action.payload.map((post)=>({...post, postId:post.data.id}));
+            state.filteredPosts = state.posts;
         })
         .addCase(loadPosts.rejected, (state, action) => {
             state.isLoadingPosts = false;
@@ -47,8 +50,9 @@ const postsSlice = createSlice({
 })
 
 export const selectPosts = (state) => state.posts.posts;
+export const selectFilteredPosts = (state) => state.posts.filteredPosts;
 
 export const isLoading = (state) => state.posts.isLoading;
 
-export const { addPost } = postsSlice.actions;
+export const { filterPosts } = postsSlice.actions;
 export default postsSlice.reducer;

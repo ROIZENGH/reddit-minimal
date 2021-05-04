@@ -4,7 +4,6 @@ import { Comments } from "../comments/Comments.js";
 import { loadComments } from "../comments/commentsSlice.js";
 import { 
     loadPosts, 
-    selectPosts, 
     isLoading,
     selectFilteredPosts
 } from "./postsSlice.js";

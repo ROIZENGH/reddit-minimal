@@ -146,3 +146,21 @@ main {
   font-size: 1.3em;
   margin: auto 0;
 }
+
+/* Comments */
+
+.comment-container {
+  text-align: left;
+  padding: 10px 0px;
+}
+
+.comment-container p {
+  font-size: 1em;
+  margin: 5px 10px;
+  font-style: italic;
+}
+
+.comment-container .username {
+  color: grey;
+  font-size: 1.25em;
+}

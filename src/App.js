@@ -14,8 +14,8 @@ function App() {
         <SearchTerm />
       </nav>
       <main>
-        <Posts className="posts-container"/>
         <Subreddits className="subjects-container"/>
+        <Posts className="posts-container"/>
       </main>
     </div>
   );

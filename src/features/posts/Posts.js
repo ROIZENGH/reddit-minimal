@@ -37,7 +37,7 @@ export const Posts = () => {
                     <div className="image-container">
                         {post.data.url_overridden_by_dest && <img className="post-image" src={post.data.url_overridden_by_dest} alt=""/>}
                     </div>
-                    <a href={`https://www.reddit.com/user/${post.data.author}`}>u/{post.data.author}</a>
+                    <p>{post.data.author}</p>
                     <button><img className="comments-icon" src="images/comments-512.png" alt="display comments" onClick={(e)=> dispatch(loadComments(post.data))}/>{post.data.num_comments}</button>
                     <Comments post={post}/>
                 </div>
